@@ -1,0 +1,57 @@
+﻿<Window x:Class="final_calculator.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:final_calculator"
+        mc:Ignorable="d"  WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="Settings" Height="300" Width="200"
+        ResizeMode = "NoResize"
+        Background = "Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Border Background="Gray"
+        CornerRadius="30,30,30,30">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".9*"/>
+            </Grid.RowDefinitions>
+            <TextBlock
+                Text="Settings"
+                FontSize="17"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Foreground="White" Margin="70,0,0,0"
+                />
+            <Button
+                Opacity=".5"
+                Margin="163,8,17,1"
+                Background="Red"
+                Click="Close_Click" Grid.ColumnSpan="2">
+
+                <TextBlock
+                    Foreground="White"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Bold>X</Bold>
+                </TextBlock>
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <CheckBox Name ="debug" Checked="DebugChanged" Unchecked="DebugChanged" Content ="Debug" Foreground="White" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <CheckBox Name="prefix" Checked="PrefixChanged" Unchecked="PrefixChanged" Content="Notation Prefix Toggle" Foreground="White" HorizontalAlignment="Left" Margin="10,30,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <ComboBox Name="theme" Text="Dark" HorizontalAlignment="Center" Margin="0,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="theme_SelectionChanged" />
+            <TextBlock
+                Text="Theme"
+                FontSize="12"
+                Foreground="White"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center" Margin="0,56,0,0" Grid.Row="1"/>
+        </Grid>
+    </Border>
+</Window>
